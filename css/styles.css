@@ -98,6 +98,9 @@ nav ul li a:hover::after {
     cursor: pointer;
 }
 
+.nav-links.show {
+    display: flex;
+}
 
 /* Show the tooltip */
 nav ul li a:hover::after {
@@ -118,6 +121,7 @@ main {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 
 /* Section styling */
 
@@ -490,7 +494,14 @@ h1 {
         width: 200px;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     }
-
+    .hamburger {
+        display: block; /* Show hamburger button */
+        font-size: 24px;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
     nav ul li {
         margin: 10px 0;
     }

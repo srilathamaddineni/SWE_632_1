@@ -8,6 +8,18 @@ const financialTips = [
 ];
 
 // Function to handle name submission
+const userNameInput = document.getElementById('userName');
+    if (userNameInput) {
+        userNameInput.addEventListener('input', function () {
+            const startButton = document.getElementById('start-button');
+            const userName = userNameInput.value;
+            if (userName.trim()) {
+                startButton.disabled = false;
+            } else {
+                startButton.disabled = true;
+            }
+        });
+    }
 function submitName() {
     const name = document.getElementById('userName').value;
 
@@ -30,15 +42,7 @@ function submitName() {
         }, 4000);
     }
 }
-document.getElementById('userName').addEventListener('input', function () {
-    const startButton = document.getElementById('start-button');
-    const userName = document.getElementById('userName').value;
-    if (userName.trim()) {
-        startButton.disabled = false;
-    } else {
-        startButton.disabled = true;
-    }
-});
+
 
 document.querySelectorAll('nav a').forEach(link => {
     if (link.href === window.location.href) {

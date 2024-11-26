@@ -21,6 +21,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Initial button state
     addExpenseButton.disabled = true;
+    document.querySelectorAll('nav a').forEach(link => {
+        if (link.href === window.location.href) {
+            link.classList.add('active');
+        }
+        });
 
     // Function to validate the form
     function checkFormValidity() {

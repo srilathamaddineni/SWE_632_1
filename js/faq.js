@@ -6,6 +6,11 @@ function toggleFAQ(id) {
         answer.style.display = "block";
     }
 }
+document.querySelectorAll('nav a').forEach(link => {
+    if (link.href === window.location.href) {
+        link.classList.add('active');
+    }
+    });
 
 // FAQ Search Function
 function searchFAQ() {

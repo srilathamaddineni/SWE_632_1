@@ -16,12 +16,26 @@ body {
 header {
     background-color: #49cae4;
     padding: 10px 0;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
+header img {
+    width: 40px;
+    height: auto;
+}
+nav {
+    flex-grow: 1; /* This will allow nav to take the available space */
+    display: flex;
+    justify-content: center; /* Center the navigation items */
+}
+
 
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content:center;
     gap: 20px;
 }
 /* Highlight active navigation link */
@@ -35,6 +49,7 @@ nav ul li a.active {
 
 nav ul li {
     margin: 0;
+    display: inline-block;
 }
 /* Tooltip container */
 nav ul li a {
@@ -69,7 +84,11 @@ nav ul li a:hover::after {
 nav ul li a:hover::after {
     opacity: 1; /* Show the tooltip on hover */
 }
-
+nav a.active {
+    text-decoration: underline;
+    font-weight: bold; /* Optional: Makes the active link bold */
+    color: #4caf50; /* Optional: Change the color of the active link */
+}
 
 /* Main content */
 main {
@@ -94,7 +113,6 @@ main {
 
 .welcome-section p {
     font-size: 18px;
-    color: #666;
 }
 
 /* Features section */
@@ -468,7 +486,5 @@ h1 {
         padding: 12px 20px; /* Reduce padding for smaller screens */
     }
 }
-
-
 
 

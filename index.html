@@ -66,6 +66,11 @@
             background-color: #49cae4;
             transform: scale(1.05);
         }
+        button:disabled {
+          background-color: #b0bec5; /* Gray color when disabled */
+          cursor: not-allowed; /* Change cursor to indicate it's not clickable */
+          transform: none; /* Remove the hover scaling effect */
+}
 
         /* Greeting and tips section */
         #greeting-section {
@@ -101,7 +106,7 @@
         <h1>Mindful Penny</h1>
         <p>Please enter your name to get started</p>
         <input type="text" id="userName" placeholder="Enter your name" required>
-        <button onclick="submitName()">Start</button>
+        <button id="start-button" onclick="submitName()" disabled>Start</button>
     </div>
 
     <div class="container fade-in" id="greeting-section">

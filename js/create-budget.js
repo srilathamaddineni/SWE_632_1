@@ -25,6 +25,35 @@ document.addEventListener('DOMContentLoaded', function () {
     };
     
     updateColorLegend();
+    // JavaScript to add 'active' class to the current page link
+     document.querySelectorAll('nav a').forEach(link => {
+    if (link.href === window.location.href) {
+        link.classList.add('active');
+    }
+    });
+    // Function to validate the form and enable/disable the submit button
+function validateForm() {
+    const totalBudget = document.getElementById('total-budget').value;
+    const budgetName = document.getElementById('budget-name').value;
+    const budgetAmount = document.getElementById('budget-amount').value;
+    const budgetCategory = document.getElementById('budget-category').value;
+    const createBudgetButton = document.getElementById('create-budget-button');
+
+    // Enable the button if all fields are filled, else disable it
+    if (totalBudget && budgetName && budgetAmount && budgetCategory) {
+        createBudgetButton.disabled = false;
+    } else {
+        createBudgetButton.disabled = true;
+    }
+}
+
+// Event listeners for input fields
+document.getElementById('total-budget').addEventListener('input', validateForm);
+document.getElementById('budget-name').addEventListener('input', validateForm);
+document.getElementById('budget-amount').addEventListener('input', validateForm);
+document.getElementById('budget-category').addEventListener('change', validateForm);
+
+
 
     totalBudgetInput.addEventListener('input', function () {
         totalBudget = parseFloat(this.value) || 0;

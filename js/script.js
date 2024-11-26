@@ -30,6 +30,21 @@ function submitName() {
         }, 4000);
     }
 }
+document.getElementById('userName').addEventListener('input', function () {
+    const startButton = document.getElementById('start-button');
+    const userName = document.getElementById('userName').value;
+    if (userName.trim()) {
+        startButton.disabled = false;
+    } else {
+        startButton.disabled = true;
+    }
+});
+
+document.querySelectorAll('nav a').forEach(link => {
+    if (link.href === window.location.href) {
+        link.classList.add('active');
+    }
+    });
 
 // Highlight the active navigation link
 document.addEventListener('DOMContentLoaded', function () {

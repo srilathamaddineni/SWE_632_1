@@ -50,6 +50,15 @@ document.querySelectorAll('nav a').forEach(link => {
     }
     });
 
+// JavaScript to toggle the nav menu
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+});
+
+
 // Highlight the active navigation link
 document.addEventListener('DOMContentLoaded', function () {
     const currentPath = window.location.pathname; // Get the current page path
